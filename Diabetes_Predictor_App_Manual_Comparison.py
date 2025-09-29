@@ -9,14 +9,13 @@ from sklearn.metrics import mean_squared_error as mse, mean_absolute_error as ma
 from sklearn.metrics import accuracy_score as acc, precision_score as ps, recall_score as rs, f1_score as f1
 import joblib
 import matplotlib.pyplot as plt
-from dotenv import load_dotenv
-import os
-
-load_dotenv()
 
 # Loading the dataset
 # Database URL format: postgresql+psycopg2://<user>:<password>:<host>:<port>/<database>
-db_url = os.getenv("db_url")
+#db_url = os.getenv("db_url")
+
+# Load DB URL from secrets
+db_url = st.secrets["database"]["url"]
 
 # Connecting to PostgreSQL
 eng = ce(db_url)
