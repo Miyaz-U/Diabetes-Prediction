@@ -12,10 +12,7 @@ import matplotlib.pyplot as plt
 
 # Loading the dataset
 # Database URL format: postgresql+psycopg2://<user>:<password>:<host>:<port>/<database>
-#db_url = os.getenv("db_url")
-
-# Load DB URL from secrets
-db_url = st.secrets["database"]["url"]
+db_url = os.getenv("db_url")
 
 # Connecting to PostgreSQL
 eng = ce(db_url)
